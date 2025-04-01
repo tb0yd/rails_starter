@@ -149,6 +149,7 @@ These patterns are patterns that should be built-in to the codebase. If you find
 
 #### 4.1.2 Javascript libraries
 
+- Use `ESBuild` to build Javascript (ES6)
 - Use `Twitter Bootstrap` for JS widgets and CSS classes (grid layout, etc.).
 - Use `Font Awesome` for icons.
 - Use `Select2` for advanced dropdowns.
