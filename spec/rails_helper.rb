@@ -44,5 +44,12 @@ RSpec.configure do |config|
   
   # Controller specs should render views
   config.render_views
+
+  # Add current_account helper for view specs
+  config.include(Module.new do
+    def current_account
+      @current_account ||= create(:account)
+    end
+  end, type: :view)
 end
 

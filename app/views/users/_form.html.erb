@@ -1,44 +1,33 @@
-<%= form_with(model: user, data: { controller: "form", action: "turbo:submit-end->form#success turbo:submit-error->form#error" }) do |f| %>
+<%= form_with(model: user, data: { turbo: true }) do |f| %>
   <% if user.errors.any? %>
     <div class="alert alert-danger">
-      <h4><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h4>
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
       <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="form-group mb-3">
     <%= f.label :email %>
     <%= f.email_field :email, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control' %>
+  <div class="form-group mb-3">
+    <label for="role">Role</label>
+    <%= select_tag :role, options_for_select([['Admin', 'adm'], ['Member', 'mem'], ['Viewer', 'vwr']], 'mem'), class: 'form-control', id: 'role' %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= f.label :active %>
+    <%= f.check_box :active, class: 'form-check-input ms-2' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :role %>
-    <%= select_tag :role, options_for_select([['Admin', 'adm'], ['Member', 'mem'], ['Viewer', 'vwr']], 'mem'), class: 'form-control select2' %>
-  </div>
-
-  <div class="form-check mb-3">
-    <%= f.check_box :active, class: 'form-check-input' %>
-    <%= f.label :active, class: 'form-check-label' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.submit class: 'btn btn-primary', data: { form_target: "submitButton" } %>
-    <div class="spinner-border text-primary d-none ms-2" data-form-target="spinner"></div>
-    <%= link_to 'Cancel', users_path, class: 'btn btn-secondary ms-2' %>
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to 'Back', users_path, class: 'btn btn-secondary ms-2' %>
   </div>
 <% end %>
 

@@ -1,15 +1,18 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+/.bundle
 
-# dependencies
 /node_modules
 
-# production
-/build
+public/builds/*
 
-# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# env files
 .env*
+
+log/
+
+tmp/
+
+spec/examples.txt

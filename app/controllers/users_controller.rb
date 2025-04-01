@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
+    @user.generate_temporary_password
     
     if @user.save
       # Create account user association
@@ -87,7 +88,7 @@ class UsersController < ApplicationController
   end
   
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :active)
+    params.require(:user).permit(:email, :active)
   end
 end
 

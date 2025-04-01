@@ -3,9 +3,7 @@
   "private": true,
   "scripts": {
     "build": "rm -rf node_modules && npm install && node ./build.js",
-    "watch": "npm-watch development",
-    "start": "next start",
-    "lint": "next lint"
+    "watch": "npm-watch development"
   },
   "dependencies": {
     "@hotwired/stimulus": "latest",

@@ -22,8 +22,6 @@ RSpec.feature "User Management", type: :feature do
     visit new_user_path
     
     fill_in "Email", with: "newuser@example.com"
-    fill_in "Password", with: "password123"
-    fill_in "Password confirmation", with: "password123"
     select "Member", from: "Role"
     
     click_button "Create User"

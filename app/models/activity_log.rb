@@ -3,7 +3,6 @@ class ActivityLog < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :account
   
-  # Enum for action (using strings as per guide)
   enum action: { 
     created: 'crt', 
     updated: 'upd', 

@@ -1,0 +1,12 @@
+<div class="alert alert-success">
+  <h4 class="alert-heading">Registration successful!</h4>
+  <p>Welcome to the application.</p>
+  <hr>
+  <p class="mb-0">Redirecting you to your dashboard...</p>
+</div>
+
+<script>
+  setTimeout(function() {
+    window.location.href = "<%= dashboard_path %>";
+  }, 2000);
+</script> 

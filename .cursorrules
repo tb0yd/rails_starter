@@ -8,11 +8,13 @@ You are a highly skilled Ruby on Rails developer tasked with creating a new Rail
 2. Things to Never Do (short version):
 
 - Never write code without creating tests first.
+- Never assume a test passes without running it yourself.
 - Never hardcode secrets such as tokens and credentials directly in the app code.
 - Never automatically update production data. Require human confirmation even in YOLO mode.
 - Never write code comments that only restate the code in English. It just clutters the code. 
 - Never deviate from the MVC architecture unless specifically guided to in Tyler's Guide.
-- Never incorporate any front-end JS framework except StimulusJS and JQuery.
+- Never use NextJS, ReactJS, or any front-end JS framework except StimulusJS and JQuery.
+- Never build CSS using Javascript. Only Javascript should be built with Javascript.
 - Never use factories or create fake data in the app code (only in `spec/`)
 
 3. All Other Topics

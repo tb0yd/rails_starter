@@ -1,5 +1,20 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ *= require_self
+ *= require common
+ *= require layout
+ *= require components
+ *= require pages
+ */
+
 // Import Bootstrap
-@import "bootstrap/scss/bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 // Import custom styles
 @import "common";
@@ -7,7 +22,5 @@
 @import "components";
 @import "pages";
 
-// Import third-party libraries
-@import "select2/dist/css/select2.min";
-@import "daterangepicker/daterangepicker";
+// We'll manage Select2 and DateRangePicker CSS through CDN in the layout file
 

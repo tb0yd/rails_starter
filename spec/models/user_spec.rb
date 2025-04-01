@@ -43,5 +43,33 @@ RSpec.describe User, type: :model do
       expect(User.active).not_to include(inactive_user)
     end
   end
+
+  describe "temporary password generation" do
+    it "generates a strong temporary password" do
+      user = User.new(email: "test@example.com")
+      password = user.generate_temporary_password
+      
+      expect(password).to match(/[A-Z]/) # Contains uppercase
+      expect(password).to match(/[a-z]/) # Contains lowercase
+      expect(password).to match(/[0-9]/) # Contains number
+      expect(password).to match(/[^A-Za-z0-9]/) # Contains special char
+      expect(password.length).to eq(16) # Is 16 characters long
+    end
+
+    it "sets the generated password" do
+      user = User.new(email: "test@example.com")
+      password = user.generate_temporary_password
+      
+      expect(user.password).to eq(password)
+    end
+
+    it "generates unique passwords" do
+      user = User.new(email: "test@example.com")
+      password1 = user.generate_temporary_password
+      password2 = user.generate_temporary_password
+      
+      expect(password1).not_to eq(password2)
+    end
+  end
 end
 

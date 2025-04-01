@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy', as: 'logout'
   
+  # Registration routes
+  get 'register', to: 'registrations#new', as: 'register'
+  post 'register', to: 'registrations#create'
+  
   # Account switching
   get 'switch_account/:id', to: 'accounts#switch', as: 'switch_account'
   

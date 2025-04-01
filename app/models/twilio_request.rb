@@ -8,7 +8,6 @@ class TwilioRequest < ApplicationRecord
   validates :api_version, presence: true
   validates :request_body, presence: true
   
-  # Enum for endpoint (using strings as per guide)
   enum endpoint: { 
     send_sms: 'sms', 
     send_voice: 'voc', 

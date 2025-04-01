@@ -1,0 +1,9 @@
+<% if @user.errors.any? %>
+  <%= turbo_stream.replace "registration_form" do %>
+    <%= render "registration_form", user: @user %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.replace "registration_form" do %>
+    <%= render "registration_success" %>
+  <% end %>
+<% end %> 

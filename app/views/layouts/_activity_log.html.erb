@@ -1,24 +1,29 @@
-<div class="activity-log">
-  <% if logs.any? %>
+<% if logs.any? %>
+  <div class="activity-log">
     <ul class="list-group">
       <% logs.each do |log| %>
         <li class="list-group-item">
           <div class="d-flex align-items-center">
-            <div class="me-3">
-              <i class="fa <%= log.icon_class %>"></i>
+            <div class="activity-icon me-3">
+              <i class="fas <%= log.icon_class %>"></i>
             </div>
-            <div>
-              <div class="fw-bold"><%= log.description %></div>
-              <div class="text-muted small">
-                <%= log.user&.email || 'System' %> - <%= log.created_at.strftime('%B %d, %Y %H:%M') %>
+            <div class="activity-details">
+              <div class="activity-time small text-muted"><%= log.created_at.strftime("%b %d, %Y %H:%M") %></div>
+              <div class="activity-description"><%= log.description %></div>
+              <div class="activity-user small">
+                <% if log.user %>
+                  <i class="fas fa-user me-1"></i> <%= log.user.email %>
+                <% end %>
               </div>
             </div>
           </div>
         </li>
       <% end %>
     </ul>
-  <% else %>
-    <p class="text-muted">No activity recorded yet.</p>
-  <% end %>
-</div>
+  </div>
+<% else %>
+  <div class="text-center py-4">
+    <p class="text-muted">No recent activity</p>
+  </div>
+<% end %>
 

@@ -28,5 +28,9 @@
     <%= f.submit "Login", class: 'btn btn-primary', data: { form_target: "submitButton" } %>
     <div class="spinner-border text-primary d-none mt-2 mx-auto" data-form-target="spinner"></div>
   </div>
+  
+  <div class="mt-3 text-center">
+    Don't have an account? <%= link_to "Register", register_path %>
+  </div>
 <% end %>
 

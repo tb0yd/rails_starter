@@ -78,7 +78,8 @@ Model classes are the central point for business logic in the application. They 
 - Use PostgreSQL as the primary database for production.
 - Follow Rails naming conventions for table and column names (snake_case, plural for tables, singular for models).
 - Always add timestamps (`created_at`, `updated_at`) to tables unless explicitly unnecessary.
-- Use indexes on any columns that will be searched or filtered on.
+- Use indexes on any columns that will be searched or filtered on
+  - When creating a unique index on multiple columns, make sure there are application-layer Rails validations that prevent duplicate records before they get committed to the database.
 - Never store denormalized data unless caching performance outweighs normalization benefits.
 - Prefer `has_many :through` over `has_and_belongs_to_many` for many-to-many relationships.
 - Use database transactions for operations that span multiple records.

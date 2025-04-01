@@ -4,10 +4,8 @@ class TwilioResponse < ApplicationRecord
   validates :response_body, presence: true
   validates :http_status, presence: true
   
-  # Delegate associations to request
   delegate :account, :user, to: :twilio_request
   
-  # Extract important data from response
   before_save :extract_data_from_response
   
   private

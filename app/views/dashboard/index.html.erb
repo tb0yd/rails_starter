@@ -6,7 +6,9 @@
       <div class="stats-card">
         <div class="d-flex justify-content-between align-items-center">
           <div>
-            <div class="stats-number"><%= current_account.users.count %></div>
+            <div class="stats-number">
+              <%= current_account.users.count rescue 0 %>
+            </div>
             <div class="stats-label">Users</div>
           </div>
           <div class="stats-icon">
@@ -20,7 +22,9 @@
       <div class="stats-card">
         <div class="d-flex justify-content-between align-items-center">
           <div>
-            <div class="stats-number"><%= ActivityLog.where(account: current_account).count %></div>
+            <div class="stats-number">
+              <%= @recent_activities.size %>
+            </div>
             <div class="stats-label">Activities</div>
           </div>
           <div class="stats-icon">
@@ -66,7 +70,7 @@
           Recent Activity
         </div>
         <div class="card-body">
-          <%= render 'layouts/activity_log', logs: ActivityLog.where(account: current_account).order(created_at: :desc).limit(5) %>
+          <%= render 'layouts/activity_log', logs: @recent_activities %>
         </div>
       </div>
     </div>
@@ -78,10 +82,10 @@
         </div>
         <div class="card-body">
           <div class="list-group">
-            <%= link_to new_user_path, class: 'list-group-item list-group-item-action' do %>
+            <%= link_to '#', class: 'list-group-item list-group-item-action' do %>
               <i class="fas fa-user-plus me-2"></i> Add New User
             <% end %>
-            <%= link_to users_path, class: 'list-group-item list-group-item-action' do %>
+            <%= link_to '#', class: 'list-group-item list-group-item-action' do %>
               <i class="fas fa-users me-2"></i> Manage Users
             <% end %>
             <%= link_to '#', class: 'list-group-item list-group-item-action' do %>
