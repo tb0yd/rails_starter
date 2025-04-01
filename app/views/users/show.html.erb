@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2><%= @user.email %></h2>
+    </div>
+    <div class="card-body">
+      <p>
+        <strong>Status:</strong>
+        <%= @user.active? ? 'Active' : 'Inactive' %>
+      </p>
+      
+      <p>
+        <strong>Role:</strong>
+        <%= @user.account_users.find_by(account: current_account)&.role %>
+      </p>
+      
+      <p>
+        <strong>Created:</strong>
+        <%= @user.created_at.strftime('%B %d, %Y') %>
+      </p>
+      
+      <p>
+        <strong>Last Login:</strong>
+        <%= @user.last_login_at&.strftime('%B %d, %Y %H:%M') || 'Never' %>
+      </p>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-primary' %>
+      <%= link_to 'Back', users_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+  
+  <div class="mt-4">
+    <h3>Activity Log</h3>
+    <%= render 'layouts/activity_log', logs: ActivityLog.where(loggable: @user).order(created_at: :desc).limit(10) %>
+  </div>
+</div>
+

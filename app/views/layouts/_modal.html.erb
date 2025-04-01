@@ -1,0 +1,19 @@
+<div class="modal fade" id="<%= modal_id %>" tabindex="-1" aria-labelledby="<%= modal_id %>Label" aria-hidden="true" data-controller="modal">
+  <div class="modal-dialog <%= modal_size || 'modal-lg' %>">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="<%= modal_id %>Label"><%= title %></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" data-action="modal#close"></button>
+      </div>
+      <div class="modal-body">
+        <%= yield %>
+      </div>
+      <% if defined?(footer) && footer %>
+        <div class="modal-footer">
+          <%= footer %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

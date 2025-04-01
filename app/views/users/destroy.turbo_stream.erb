@@ -1,0 +1,3 @@
+<%= turbo_stream.remove "user_#{@user.id}" %>
+<%= turbo_stream.replace 'flash_messages', partial: 'layouts/flash_messages' %>
+

@@ -1,0 +1,88 @@
+// Page-specific styles
+@import "common";
+
+// Dashboard
+.dashboard {
+  .stats-card {
+    background-color: white;
+    border-radius: $border-radius;
+    padding: $spacing-lg;
+    margin-bottom: $spacing-lg;
+    box-shadow: $box-shadow-sm;
+    
+    .stats-icon {
+      font-size: 2rem;
+      color: $primary-color;
+    }
+    
+    .stats-number {
+      font-size: 1.5rem;
+      font-weight: $font-weight-bold;
+    }
+    
+    .stats-label {
+      color: $secondary-color;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .recent-activity {
+    margin-top: $spacing-lg;
+  }
+}
+
+// User pages
+.users-index {
+  .user-filters {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.user-show {
+  .user-header {
+    margin-bottom: $spacing-lg;
+    
+    .user-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: $light-color;
+      @include flex-center;
+      font-size: 2rem;
+      color: $secondary-color;
+    }
+    
+    .user-info {
+      margin-left: $spacing-lg;
+    }
+  }
+  
+  .user-tabs {
+    margin-top: $spacing-lg;
+  }
+}
+
+// Login page
+.login-page {
+  @include flex-center;
+  min-height: calc(100vh - 200px);
+  
+  .login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: $spacing-lg;
+    background-color: white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    
+    .login-logo {
+      text-align: center;
+      margin-bottom: $spacing-lg;
+      
+      img {
+        max-width: 150px;
+      }
+    }
+  }
+}
+

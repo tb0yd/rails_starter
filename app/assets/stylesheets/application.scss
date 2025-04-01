@@ -1,0 +1,13 @@
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Import custom styles
+@import "common";
+@import "layout";
+@import "components";
+@import "pages";
+
+// Import third-party libraries
+@import "select2/dist/css/select2.min";
+@import "daterangepicker/daterangepicker";
+

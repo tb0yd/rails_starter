@@ -1,0 +1,17 @@
+<tr id="user_<%= user.id %>">
+  <td><%= user.email %></td>
+  <td><%= user.active? ? 'Active' : 'Inactive' %></td>
+  <td><%= user.account_users.find_by(account: current_account)&.role %></td>
+  <td>
+    <%= link_to user, class: 'btn btn-sm btn-primary', data: { turbo_frame: '_top' } do %>
+      <i class="fas fa-eye"></i>
+    <% end %>
+    <%= link_to edit_user_path(user), class: 'btn btn-sm btn-secondary', data: { turbo_frame: '_top' } do %>
+      <i class="fas fa-edit"></i>
+    <% end %>
+    <%= link_to user, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' do %>
+      <i class="fas fa-trash"></i>
+    <% end %>
+  </td>
+</tr>
+

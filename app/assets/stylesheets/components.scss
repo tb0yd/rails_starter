@@ -1,0 +1,117 @@
+// Component styles
+@import "common";
+
+// Cards
+.card {
+  margin-bottom: $spacing-lg;
+  box-shadow: $box-shadow-sm;
+  
+  .card-header {
+    background-color: rgba($primary-color, 0.1);
+    font-weight: $font-weight-bold;
+  }
+}
+
+// Buttons
+.btn {
+  &.btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      border-color: darken($primary-color, 10%);
+    }
+  }
+  
+  &.btn-outline-primary {
+    color: $primary-color;
+    border-color: $primary-color;
+    
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+}
+
+// Forms
+.form-group {
+  margin-bottom: $spacing-md;
+  
+  label {
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-xs;
+  }
+}
+
+// Activity log
+.activity-log {
+  .list-group-item {
+    border-left: 3px solid $primary-color;
+    margin-bottom: $spacing-xs;
+    
+    i {
+      color: $primary-color;
+    }
+  }
+}
+
+// Modals
+.modal-content {
+  box-shadow: $box-shadow-lg;
+  
+  .modal-header {
+    background-color: rgba($primary-color, 0.1);
+  }
+}
+
+// Alerts
+.alert {
+  margin-bottom: $spacing-lg;
+  box-shadow: $box-shadow-sm;
+}
+
+// Pagination
+.pagination {
+  .page-item {
+    &.active .page-link {
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+    
+    .page-link {
+      color: $primary-color;
+    }
+  }
+}
+
+// Select2 customization
+.select2-container--bootstrap4 {
+  .select2-selection {
+    border: 1px solid #ced4da;
+    border-radius: $border-radius;
+  }
+  
+  .select2-results__option--highlighted {
+    background-color: $primary-color;
+  }
+}
+
+// DateRangePicker customization
+.daterangepicker {
+  .ranges {
+    li.active {
+      background-color: $primary-color;
+    }
+  }
+  
+  td.active {
+    background-color: $primary-color;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+

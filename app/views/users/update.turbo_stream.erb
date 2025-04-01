@@ -1,0 +1,7 @@
+<% if @user.errors.any? %>
+  <%= turbo_stream.replace 'user_form', partial: 'users/form', locals: { user: @user } %>
+<% else %>
+  <%= turbo_stream.replace "user_#{@user.id}", partial: 'users/user', locals: { user: @user } %>
+  <%= turbo_stream.replace 'flash_messages', partial: 'layouts/flash_messages' %>
+<% end %>
+

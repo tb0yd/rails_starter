@@ -1,0 +1,96 @@
+<div class="dashboard">
+  <h1>Dashboard</h1>
+  
+  <div class="row mt-4">
+    <div class="col-md-3">
+      <div class="stats-card">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <div class="stats-number"><%= current_account.users.count %></div>
+            <div class="stats-label">Users</div>
+          </div>
+          <div class="stats-icon">
+            <i class="fas fa-users"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="stats-card">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <div class="stats-number"><%= ActivityLog.where(account: current_account).count %></div>
+            <div class="stats-label">Activities</div>
+          </div>
+          <div class="stats-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="stats-card">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <div class="stats-number">0</div>
+            <div class="stats-label">Messages</div>
+          </div>
+          <div class="stats-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="stats-card">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <div class="stats-number">0</div>
+            <div class="stats-label">Tasks</div>
+          </div>
+          <div class="stats-icon">
+            <i class="fas fa-tasks"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row mt-4">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          Recent Activity
+        </div>
+        <div class="card-body">
+          <%= render 'layouts/activity_log', logs: ActivityLog.where(account: current_account).order(created_at: :desc).limit(5) %>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          Quick Actions
+        </div>
+        <div class="card-body">
+          <div class="list-group">
+            <%= link_to new_user_path, class: 'list-group-item list-group-item-action' do %>
+              <i class="fas fa-user-plus me-2"></i> Add New User
+            <% end %>
+            <%= link_to users_path, class: 'list-group-item list-group-item-action' do %>
+              <i class="fas fa-users me-2"></i> Manage Users
+            <% end %>
+            <%= link_to '#', class: 'list-group-item list-group-item-action' do %>
+              <i class="fas fa-cog me-2"></i> Account Settings
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

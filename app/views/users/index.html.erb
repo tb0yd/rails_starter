@@ -1,0 +1,35 @@
+<div class="container users-index">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Users</h1>
+    <%= link_to new_user_path, class: 'btn btn-success', data: { turbo_frame: '_top' } do %>
+      <i class="fas fa-plus"></i> New User
+    <% end %>
+  </div>
+
+  <div id="flash_messages">
+    <%= render 'layouts/flash_messages' %>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="users_list">
+            <% @users.each do |user| %>
+              <%= render 'user', user: user %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

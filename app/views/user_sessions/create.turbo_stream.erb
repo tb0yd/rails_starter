@@ -1,0 +1,6 @@
+<% if @user_session.errors.any? %>
+  <%= turbo_stream.replace 'login_form', partial: 'user_sessions/form', locals: { user_session: @user_session } %>
+<% else %>
+  <% # Redirect is handled in the controller %>
+<% end %>
+

@@ -1,0 +1,24 @@
+<div class="activity-log">
+  <% if logs.any? %>
+    <ul class="list-group">
+      <% logs.each do |log| %>
+        <li class="list-group-item">
+          <div class="d-flex align-items-center">
+            <div class="me-3">
+              <i class="fa <%= log.icon_class %>"></i>
+            </div>
+            <div>
+              <div class="fw-bold"><%= log.description %></div>
+              <div class="text-muted small">
+                <%= log.user&.email || 'System' %> - <%= log.created_at.strftime('%B %d, %Y %H:%M') %>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="text-muted">No activity recorded yet.</p>
+  <% end %>
+</div>
+
