@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.2'
+ruby '3.3.4'
 
 # Core Rails gems
-gem 'rails', '~> 7.0.8'
+gem 'rails', '~> 7.1'
 gem 'pg', '~> 1.5.3'
 gem 'puma', '~> 6.3.1'
 gem 'sprockets-rails'
@@ -28,8 +28,6 @@ gem 'resque-timeout'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -41,5 +39,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'vcr'
   gem 'webmock'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
 end
 

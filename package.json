@@ -1,10 +1,9 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "myapp",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "build": "rm -rf node_modules && npm install && node ./build.js",
+    "watch": "npm-watch development",
     "start": "next start",
     "lint": "next lint"
   },

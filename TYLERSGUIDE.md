@@ -11,7 +11,7 @@
 ## 2. Things to Never Do (Long Version)
 
 - Never use Rubocop - it's antithetical to the spirit of Ruby, which is meant to be expressive and flexible.
-- Never use metaprogramming - usually the basic language constructs are sufficient and more readable anyway.
+- Never use Ruby metaprogramming - usually the basic language constructs are sufficient and more readable anyway.
 - Never use any ORM except ActiveRecord. It's the standard.
 - Never write a default scope to a model (Paranoia installs its own default scope - that's OK).
 - Never make methods private unless it's in a controller. Strict encapsulation doesn't make much sense unless you're distributing code to be used widely.
@@ -21,7 +21,7 @@
   - **Example:** `enum sex: { female: 'fem', male: 'mal' }`
 - Never generate HTML with Ruby helper code using `content_tag`, `capture`, etc. ERb is the only way HTML should be generated.
 - Never inline JavaScript or CSS inside a view partial using `<script>` or `<style>` tags. It's okay in a layout if a third-party JS library demands it.
-- Never use any front-end framework other than StimulusJS or JQuery. Two is enough already.
+- Never use NextJS, TypeScript, or React. Never use any front-end framework other than StimulusJS or JQuery. Two is enough already.
 - Never access a Thread-local variable (such as current account or current user) from inside the model code. This keeps the model code accessible from various contexts (tests, tasks, irb, etc.) without messing with Thread-local vars.
 - Never use Cucumber or TestUnit for testing. RSpec is the accepted more widely by the community.
 - Never use the Null Object, Decorator, Observer, Adapter, Presenter, or Visitor patterns. These are habits carried over from other programming languages.
