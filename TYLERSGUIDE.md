@@ -17,8 +17,7 @@
 - Never make methods private unless it's in a controller. Strict encapsulation doesn't make much sense unless you're distributing code to be used widely.
 - Never name anything using the word "service" except third-party (external) integrations, i.e. RESTful APIs.
 - Never reinvent something that has been provided by Ruby's standard library, Ruby on Rails, or any of the active* gems bundled with Rails like `activemodel`, `activesupport`, etc.
-- Never save enums to the database as integers. Use abbreviated strings instead.
-  - **Example:** `enum sex: { female: 'fem', male: 'mal' }`
+- Never save enums to the database as integers. Use snake_case strings instead.
 - Never generate HTML with Ruby helper code using `content_tag`, `capture`, etc. ERb is the only way HTML should be generated.
 - Never inline JavaScript or CSS inside a view partial using `<script>` or `<style>` tags. It's okay in a layout if a third-party JS library demands it.
 - Never use NextJS, TypeScript, or React. Never use any front-end framework other than StimulusJS or JQuery. Two is enough already.
