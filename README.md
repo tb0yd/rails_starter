@@ -50,8 +50,10 @@ Yes, the guidelines are opinionated, and yes, they do deviate from the received 
    asdf install ruby 3.3.4
    asdf global ruby 3.3.4 
 
-   # Install npm
-   ...
+   # Install Node.js and npm
+   asdf plugin add nodejs
+   asdf install nodejs 20.11.1
+   asdf global nodejs 20.11.1
    ```
 
 2. **Install PostgreSQL**
