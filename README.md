@@ -65,8 +65,8 @@ Yes, the guidelines are opinionated, and yes, they do deviate from the received 
 3. **Clone and Setup**
    ```bash
    # Clone the repository
-   git clone [your-repo-url]
-   cd [your-repo-name]
+   git clone https://github.com/tb0yd/rails_starter
+   cd rails_starter
 
    # Install dependencies
    bundle install
