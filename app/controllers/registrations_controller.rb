@@ -26,7 +26,7 @@ class RegistrationsController < ApplicationController
           loggable: @user,
           user: @user,
           account: @account,
-          action: 'created',
+          action: :created,
           description: "User registered and created account #{@account.name}"
         )
         

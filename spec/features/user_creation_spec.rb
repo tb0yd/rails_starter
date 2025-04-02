@@ -33,7 +33,7 @@ RSpec.feature "User Creation", type: :feature do
     # Verify activity was logged
     log = ActivityLog.where(action: 'created', loggable: user).last
     expect(log).to be_present
-    expect(log.action).to eq("created")
+    expect(log.action).to eq('created')
     expect(log.loggable).to eq(user)
     expect(log.user).to eq(admin)
     expect(log.account).to eq(account)

@@ -9,9 +9,9 @@ class TwilioRequest < ApplicationRecord
   validates :request_body, presence: true
   
   enum endpoint: { 
-    send_sms: 'sms', 
-    send_voice: 'voc', 
-    verify: 'ver' 
+    send_sms: :send_sms, 
+    send_voice: :send_voice, 
+    verify: :verify 
   }
 end
 

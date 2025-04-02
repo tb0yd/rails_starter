@@ -2,9 +2,9 @@
 
 Tyler's best practices for Ruby on Rails development with Cursor, codified in a starter Rails app that includes a comprehensive guide called [Tyler's Guide to Writing Rails Apps That Outlive Empires](TYLERSGUIDE.md).
 
-I recently got into developing with Cursor and decided to create my own concise, complete guide to feed into the model as context. Sharing in case others find it useful.
+I recently got into developing with Cursor and decided to create my own concise, complete guide to feed into the model as context. The guidelines are informed by my 15+-year career in Ruby on Rails development. They do not reflect the consensus of the Ruby on Rails community. 
 
-You may not agree with these guidelines - that's ok! Fork the project and do it your way. Let me know if you do! I'd love to read it.
+This is an ongoing project focused on Rails development with AI. Sharing in case others find it useful.
 
 ## 🎯 Purpose
 

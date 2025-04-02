@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       loggable: @user,
       user: current_user,
       account: current_account,
-      action: 'viewed',
+      action: :viewed,
       description: "Viewed user #{@user.email}"
     )
   end
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
         loggable: @user,
         user: current_user,
         account: current_account,
-        action: 'created',
+        action: :created,
         description: "Created user #{@user.email}"
       )
       
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
         loggable: @user,
         user: current_user,
         account: current_account,
-        action: 'updated',
+        action: :updated,
         description: "Updated user #{@user.email}"
       )
       
@@ -73,7 +73,7 @@ class UsersController < ApplicationController
       loggable: @user,
       user: current_user,
       account: current_account,
-      action: 'deleted',
+      action: :deleted,
       description: "Deleted user #{@user.email}"
     )
     

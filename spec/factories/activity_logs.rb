@@ -3,7 +3,7 @@ FactoryBot.define do
     association :account
     association :user
     association :loggable, factory: :user
-    action { 'viewed' }
+    action { :viewed }
     description { 'Viewed the dashboard' }
   end
 end 
