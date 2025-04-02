@@ -2,6 +2,10 @@
 
 Tyler's best practices for Ruby on Rails development with Cursor, codified in a starter Rails app that includes a comprehensive guide called [Tyler's Guide to Writing Rails Apps That Outlive Empires](TYLERSGUIDE.md).
 
+I recently got into developing with Cursor and decided to create my own concise, complete guide to feed into the model as context. Sharing in case others find it useful.
+
+You may not agree with these guidelines - that's ok! Fork the project and do it your way. Let me know if you do! I'd love to read it.
+
 ## 🎯 Purpose
 
 This starter app implements the battle-tested principles and patterns outlined in the guide, including:
@@ -102,6 +106,6 @@ npm run build
 
 This repo is *open* for contribution. And forking! 
 
-If you like the guidelines, but see some things that need tweaking, feel free to open a pull request. I won't debate on the opinions expressed, but I will certainly appreciate and accept PRs from people who like the project and want to collaborate.
+If you like the guidelines, but see some things that need tweaking, feel free to open a pull request. You have to be on board with the guidelines in general, though.
 
 If you don't like the guidelines, but like the overall idea and format of the project, feel free to fork and make your own. Send me a link to your own starter project, and I'll link you here! :-D
