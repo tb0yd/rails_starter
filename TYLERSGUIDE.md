@@ -345,11 +345,7 @@ Any data update requested by a user should first be treated as a firefighting re
 - Log all progress and results to STDOUT.
 - Ensure exceptions are logged to Honeybadger.
 
-### 5.6.1 Firefighting UI
-
-If a firefighting task is used often, it sometimes warrants creating a firefighting UI. This should be restricted to a new role called, `firefighter`, who has access to all accounts in the system. The UI should appear as a series of UI cards. Each task should appear in the UI as a small web form inside a UI card. 
-
-## 5.7 Automated Builds with CircleCI  
+## 5.6 Automated Builds with CircleCI  
 
 As a project gets large, it gets unwieldy to run the entire test suite on every change. Automatic builds with CircleCI and GitHub is the solution to managing complexity in large codebases.
 
@@ -364,7 +360,7 @@ As a project gets large, it gets unwieldy to run the entire test suite on every 
 - Each instance running browser-based (feature) specs should collect all failed tests, and immediately re-run those tests to make sure that they aren't flaky (false negatives).
 - CircleCI should run every time a commit is pushed to GitHub.
 
-## 5.8 APIs
+## 5.7 APIs
 
 When another application must have programmatic access to this application, a RESTful API is preferred.
 
