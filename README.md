@@ -97,7 +97,7 @@ npm run build
 
 ## 📚 Additional Resources
 
-- [Tyler's Guide to Writing Rails Apps That Outlive Empires](GUIDE.md)
+- [Tyler's Guide to Writing Rails Apps That Outlive Empires](TYLERSGUIDE.md)
 - [Ruby on Rails Guides](https://guides.rubyonrails.org/v7.1/index.html)
 - [RSpec Documentation](https://rspec.info/)
 - [PostgreSQL Documentation](https://www.postgresql.org/docs/)

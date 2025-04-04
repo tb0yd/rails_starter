@@ -326,7 +326,7 @@ Here are the approved patterns to deploy to an AWS cluster for a corporate or hi
 - Set up **RDS** with automated backups and failover configurations.  
 - Use **AWS Systems Manager (SSM)** for SSH access instead of opening port 22.  
 
-## 5.5. Data Import & ETL (Extract, Transform, Load)  
+## 5.6. Data Import & ETL (Extract, Transform, Load)  
 
 Sometimes you need to ingest large amounts of data into the application. Here is the approved pattern for that.
 
@@ -336,7 +336,7 @@ Sometimes you need to ingest large amounts of data into the application. Here is
 - **Validate data before import** and **log errors** instead of failing the entire import.  
 - Use **`activerecord-import`** for **bulk insertions** to minimize DB queries.
 
-## 5.6. Firefighting  
+## 5.7. Firefighting  
 
 Any data update requested by a user should first be treated as a firefighting request before it is implemented in the UI. Firefighting requests must be executed by a technician using Rake tasks.  
 
@@ -345,7 +345,7 @@ Any data update requested by a user should first be treated as a firefighting re
 - Log all progress and results to STDOUT.
 - Ensure exceptions are logged to Honeybadger.
 
-## 5.6 Automated Builds with CircleCI  
+## 5.8. Automated Builds with CircleCI  
 
 As a project gets large, it gets unwieldy to run the entire test suite on every change. Automatic builds with CircleCI and GitHub is the solution to managing complexity in large codebases.
 
@@ -360,7 +360,7 @@ As a project gets large, it gets unwieldy to run the entire test suite on every 
 - Each instance running browser-based (feature) specs should collect all failed tests, and immediately re-run those tests to make sure that they aren't flaky (false negatives).
 - CircleCI should run every time a commit is pushed to GitHub.
 
-## 5.7 APIs
+## 5.9 APIs
 
 When another application must have programmatic access to this application, a RESTful API is preferred.
 
